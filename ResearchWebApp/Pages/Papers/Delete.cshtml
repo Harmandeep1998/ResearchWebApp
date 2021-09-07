@@ -1,0 +1,32 @@
+﻿@page
+@model ResearchWebApp.Pages.Papers.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="text-center font1">Delete Paper Details</h1>
+
+<div>
+    <h4>Are you sure you want to delete this Paper Details?</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Paper.PaperName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Paper.PaperName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Paper.ISSN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Paper.ISSN)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Paper.Id" />
+        <input type="submit" value="Delete Paper Details" class="btn btn-danger" />
+    </form>
+</div>

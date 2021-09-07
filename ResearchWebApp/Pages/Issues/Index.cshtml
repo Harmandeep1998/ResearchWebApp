@@ -1,0 +1,34 @@
+﻿@page
+@model ResearchWebApp.Pages.Issues.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center font1">All Paper Issue Board</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-dark">Add New Issue for Paper</a>
+</p>
+<div class="row">
+    @foreach (var item in Model.Issue)
+    {
+        <div class="col-6">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        @Html.DisplayFor(modelItem => item.Title)
+                        (@Html.DisplayFor(modelItem => item.MonthName) @Html.DisplayFor(modelItem => item.Year))
+                    </h4>
+                    <p>Paper: @Html.DisplayFor(modelItem => item.Paper.PaperName)</p>
+                    <p>Volume @Html.DisplayFor(modelItem => item.Volume) Issue @Html.DisplayFor(modelItem => item.IssueNo)</p>
+                    <p>Authors: @Html.DisplayFor(modelItem => item.Authors)</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-page="./Edit" class="btn btn-secondary mr-2" asp-route-id="@item.Id">Edit</a>
+                    <a asp-page="./Delete" class="btn btn-warning" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

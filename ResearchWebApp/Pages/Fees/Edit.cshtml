@@ -1,0 +1,37 @@
+﻿@page
+@model ResearchWebApp.Pages.Fees.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center font1">Edit New Paper</h1>
+<hr />
+<div class="row">
+
+    <div class="col-md-4">
+        <img src="~/images/fees.png" class="img-fluid" />
+    </div>
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Fee.Id" />
+            <div class="form-group">
+                <label asp-for="Fee.PaperID" class="control-label"></label>
+                <select asp-for="Fee.PaperID" class="form-control" asp-items="ViewBag.PaperID"></select>
+                <span asp-validation-for="Fee.PaperID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fee.Amount" class="control-label"></label>
+                <input asp-for="Fee.Amount" class="form-control" />
+                <span asp-validation-for="Fee.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Publication Fee" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

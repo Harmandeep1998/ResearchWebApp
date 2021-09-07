@@ -1,0 +1,29 @@
+﻿@page
+@model ResearchWebApp.Pages.Papers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center font1">All Papers</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-dark">Add New Paper</a>
+</p>
+<div class="row">
+    @foreach (var item in Model.Paper)
+    {
+        <div class="col-6">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.PaperName)</h4>
+                    <p>ISSN: @Html.DisplayFor(modelItem => item.ISSN)</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-page="./Edit" class="btn btn-secondary mr-2" asp-route-id="@item.Id">Edit</a>
+                    <a asp-page="./Delete" class="btn btn-warning" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

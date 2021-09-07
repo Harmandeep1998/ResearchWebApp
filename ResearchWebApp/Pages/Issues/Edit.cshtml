@@ -1,0 +1,67 @@
+﻿@page
+@model ResearchWebApp.Pages.Issues.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center font1">Edit Paper Issue Details</h1>
+<hr />
+<div class="row">
+
+    <div class="col-md-4">
+        <img src="~/images/editorials.png" class="img-fluid" />
+    </div>
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Issue.Id" />
+            <div class="form-group">
+                <label asp-for="Issue.PaperID" class="control-label"></label>
+                <select asp-for="Issue.PaperID" class="form-control" asp-items="ViewBag.PaperID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.Title" class="control-label"></label>
+                <input asp-for="Issue.Title" class="form-control" />
+                <span asp-validation-for="Issue.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.Authors" class="control-label"></label>
+                <input asp-for="Issue.Authors" class="form-control" />
+                <span asp-validation-for="Issue.Authors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.MonthName" class="control-label"></label>
+                <input asp-for="Issue.MonthName" class="form-control" />
+                <span asp-validation-for="Issue.MonthName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.Year" class="control-label"></label>
+                <input asp-for="Issue.Year" class="form-control" />
+                <span asp-validation-for="Issue.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.Volume" class="control-label"></label>
+                <input asp-for="Issue.Volume" class="form-control" />
+                <span asp-validation-for="Issue.Volume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.IssueNo" class="control-label"></label>
+                <input asp-for="Issue.IssueNo" class="form-control" />
+                <span asp-validation-for="Issue.IssueNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Issue.PageNo" class="control-label"></label>
+                <input asp-for="Issue.PageNo" class="form-control" />
+                <span asp-validation-for="Issue.PageNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Paper Issue Details" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

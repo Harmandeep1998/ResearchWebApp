@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 font1">Research Web</h1>
+</div>
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <div class="card w-100">
+            <center>
+                <img src="~/images/research.png" class="img-fluid">
+            </center>
+            <div class="card-body">
+                <a class="btn btn-dark btn-block" asp-page="/Papers/Index">All Papers</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card w-100">
+            <center>
+                <img src="~/images/issues.png" class="img-fluid">
+            </center>
+            <div class="card-body">
+                <a class="btn btn-dark btn-block" asp-page="/Issues/Index">All Paper Issues</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card w-100">
+            <center>
+                <img src="~/images/fees.png" class="img-fluid">
+            </center>
+            <div class="card-body">
+                <a class="btn btn-dark btn-block" asp-page="/Fees/Index">Publication Fee</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card w-100">
+            <center>
+                <img src="~/images/editorials.png" class="img-fluid">
+            </center>
+            <div class="card-body">
+                <a class="btn btn-dark btn-block" asp-page="/EditorialBoards/Index">Editorial Board</a>
+            </div>
+        </div>
+
+    </div>
+</div>

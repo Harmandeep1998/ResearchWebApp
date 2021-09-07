@@ -1,0 +1,43 @@
+﻿@page
+@model ResearchWebApp.Pages.EditorialBoards.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center font1">Add New Editorial Board Member</h1>
+<hr />
+<div class="row">
+
+    <div class="col-md-4">
+        <img src="~/images/editorials.png" class="img-fluid" />
+    </div>
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EditorialBoard.Title" class="control-label"></label>
+                <input asp-for="EditorialBoard.Title" class="form-control" />
+                <span asp-validation-for="EditorialBoard.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditorialBoard.PaperName" class="control-label">Person Name</label>
+                <input asp-for="EditorialBoard.PaperName" class="form-control" />
+                <span asp-validation-for="EditorialBoard.PaperName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditorialBoard.Description" class="control-label"></label>
+                <textarea asp-for="EditorialBoard.Description" class="form-control" ></textarea>
+                <span asp-validation-for="EditorialBoard.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Editorial Board Member Details" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
